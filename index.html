@@ -1,10 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>my UI</title>
+    <style>
+        *{
+            margin: 0 ;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root{
+            --buttonH:2em;
+            --buttonF:16PX;
+            --button-a-color:rgba(1,1,1,0.5)
+        }
+    </style>
+    <style>
+        .g-button{
+            font-size: var(--buttonF);
+            height: var(--buttonH);
+            padding: 0 2em;
+            border-radius: 10px;
+            background: white;
+        }
+        .g-button:hover{
+            border-color: white;
+        }
+        .g-button:active{
+            background: snow;
+        }
+        .g-button:focus{
+            outline: none;
+        }
+    </style>
 </head>
 <body>
-
+<div id="app">
+    <g-button></g-button>
+</div>
 </body>
+<script src="./node_modules/vue/dist/vue.min.js"></script>
+<script src="./button.js"></script>
+<script>
+    new Vue({
+        el:'#app'
+    })
+</script>
 </html>
