@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/ARCHERSPAPA/UI-LUNZI/issues"
   },
-  "homepage": "https://github.com/ARCHERSPAPA/UI-LUNZI#readme"
+  "homepage": "https://github.com/ARCHERSPAPA/UI-LUNZI#readme",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
 }
