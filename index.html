@@ -7,46 +7,43 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>my UI</title>
     <style>
-        *{
-            margin: 0 ;
+        * {
+            margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        :root{
-            --buttonH:2em;
-            --buttonF:16PX;
-            --button-a-color:rgba(1,1,1,0.5)
+
+        :root {
+            --buttonH: 2em;
+            --buttonF: 16PX;
+            --button-a-color: rgba(1, 1, 1, 0.5)
         }
     </style>
     <style>
-        .g-button{
-            font-size: var(--buttonF);
-            height: var(--buttonH);
-            padding: 0 2em;
-            border-radius: 10px;
-            background: white;
-        }
-        .g-button:hover{
-            border-color: white;
-        }
-        .g-button:active{
-            background: snow;
-        }
-        .g-button:focus{
-            outline: none;
+        .icon {
+            width: 1em;
+            height: 1em;
         }
     </style>
 </head>
 <body>
-<div id="app">
-    <g-button></g-button>
+<div id="app" >
+    <g-button icon="you" icondrection="right">
+        nihao
+
+    </g-button>
+    <g-button icon="you" icondrection="kk">
+        nihao
+
+    </g-button>
+    <g-button icon="you" icondrection="right">
+        nihao
+
+    </g-button>
+
 </div>
 </body>
-<script src="./node_modules/vue/dist/vue.min.js"></script>
-<script src="./button.js"></script>
-<script>
-    new Vue({
-        el:'#app'
-    })
-</script>
+<script src="//at.alicdn.com/t/font_1226935_wslw5kb83hs.js"></script>
+<script src='./src/app.js'></script>
+
 </html>
