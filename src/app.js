@@ -50,6 +50,7 @@ const  expect = modetest.expect
     })
     gbutton.$on('click',spy)
     let useelment = gbutton.$el
+
    useelment.click()
     expect(spy).to.have.been.called()
     console.log(useelment)
