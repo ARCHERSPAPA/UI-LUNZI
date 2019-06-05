@@ -1,12 +1,12 @@
 <template>
-    <button class="g-button" :class="{[`icon-${icondrection}`]:true}" @click="x">
+    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}" @click="x">
 
         <div class="content">
             <slot></slot>
         </div>
-        <g-icon name="loading"  v-if="loading" class="load"> </g-icon>
+        <g-icon  name="loading" v-if="loading" class="load"> </g-icon>
         <div class="icon" v-if="!loading && icon">
-            <g-icon v-if="icon" :name="icon" >
+            <g-icon  :name="icon" >
             </g-icon>
 
         </div>
@@ -17,6 +17,9 @@
 </template>
 
 <script>
+    import Icon from './icon'
+    import Vue from 'vue'
+    Vue.component('g-icon',Icon)
     export default {
         props: {
             icon: {},
@@ -24,11 +27,14 @@
               default: false
 
             },
-            icondrection: {
+            components:{
+              'g-icon':Icon
+            },
+            iconPosition: {
                 type: String,
-                default: 'left',
-                validator(v) {
-                    return !(v !== 'left' && v !== 'right');
+                default: "left",
+                validator(value) {
+                    return value === "left" || value === "right";
                 }
             },
 
