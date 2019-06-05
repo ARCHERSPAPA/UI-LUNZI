@@ -15,7 +15,8 @@
  3. 使用:npm i -s ui-serlf-hei
  4. import {button,buttongroup,Icon} from 'ui-serlf-hei'
      import 'ui-serlf-hei/dist/index.css'
-5. 当前S图标只有
+5. 当前图标只有：
  ![icon](https://i.loli.net/2019/06/05/5cf7959d4620c94510.png)
+ 会不断的去更新谢谢支持
  ## 提问
  ## 变更记录
