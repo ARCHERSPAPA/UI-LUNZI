@@ -58,11 +58,12 @@
         margin-right: 0.2em;
     }
     .g-button {
+        color: var(--buttonC);
         font-size: var(--buttonF);
         height: var(--buttonH);
         padding: 0 1em;
         border-radius: 10px;
-        background: white;
+        background: var(--buttonbackgroundC);
         display: inline-flex;
         justify-content: center;
         align-items: center;

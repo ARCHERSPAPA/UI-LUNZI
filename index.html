@@ -16,7 +16,8 @@
         :root {
             --buttonH: 2em;
             --buttonF: 16PX;
-            --button-a-color: rgba(1, 1, 1, 0.5)
+            --buttonbackgroundC: #fff;
+            --buttonC: black
         }
     </style>
     <style>
@@ -31,24 +32,24 @@
     <g-button icon="you" iconPosition="right" :loading="isload" @click="isload=!isload">
         按钮
     </g-button>
-    <g-button icon="modf"  :loading="isload1" @click="isload1=!isload1">
+    <g-button icon="modf" :loading="isload1" @click="isload1=!isload1">
         按钮
     </g-button>
     <g-button icon="good" iconPosition="right" :loading="isload2" @click="isload2=!isload2">
         按钮
     </g-button>
-<buttongroup>
-  <g-button>上一页</g-button>
-    <g-button>草拟吗</g-button>
-    <g-button>下一页</g-button>
-</buttongroup>
+    <buttongroup>
+        <g-button>上一页</g-button>
+        <g-button>草拟吗</g-button>
+        <g-button>下一页</g-button>
+    </buttongroup>
     <buttongroup>
         <div>nihao</div>
     </buttongroup>
     <div id="test"></div>
 </div>
 </body>
-<script src="//at.alicdn.com/t/font_1226935_lc4era9n7y.js"></script>
+<!--<script src="//at.alicdn.com/t/font_1226935_lc4era9n7y.js"></script>-->
 <script src='./src/app.js'></script>
 
 </html>
