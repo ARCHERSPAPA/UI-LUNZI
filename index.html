@@ -25,28 +25,44 @@
             width: 1em;
             height: 1em;
         }
+
+        .list {
+            margin: 30px 0
+        }
     </style>
 </head>
 <body>
 <div id="app">
-    <g-button icon="you" iconPosition="right" :loading="isload" @click="isload=!isload">
-        按钮
-    </g-button>
-    <g-button icon="modf" :loading="isload1" @click="isload1=!isload1">
-        按钮
-    </g-button>
-    <g-button icon="good" iconPosition="right" :loading="isload2" @click="isload2=!isload2">
-        按钮
-    </g-button>
-    <buttongroup>
-        <g-button>上一页</g-button>
-        <g-button>草拟吗</g-button>
-        <g-button>下一页</g-button>
-    </buttongroup>
-    <buttongroup>
-        <div>nihao</div>
-    </buttongroup>
-    <div id="test"></div>
+
+    <div class="  list">
+        <g-button icon="you" iconPosition="right" :loading="isload" @click="isload=!isload">
+            按钮
+        </g-button>
+        <g-button icon="modf" :loading="isload1" @click="isload1=!isload1">
+            按钮
+        </g-button>
+        <g-button icon="good" iconPosition="right" :loading="isload2" @click="isload2=!isload2">
+            按钮
+        </g-button>
+        <buttongroup>
+            <g-button>上一页</g-button>
+            <g-button>草拟吗</g-button>
+            <g-button>下一页</g-button>
+        </buttongroup>
+        <buttongroup>
+            <div>nihao</div>
+        </buttongroup>
+
+    </div>
+    <div class=" list">
+        <g-input></g-input>
+        <g-input disabled></g-input>
+        <g-input readonly></g-input>
+        <g-input  iconname="err2" erro>
+        </g-input>
+    </div>
+
+
 </div>
 </body>
 <!--<script src="//at.alicdn.com/t/font_1226935_lc4era9n7y.js"></script>-->
