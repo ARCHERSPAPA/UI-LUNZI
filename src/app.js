@@ -13,9 +13,13 @@ new Vue({
             isload:false,
         isload1:false,
         isload2:false
-        }
-
-
+        },
+methods:{
+     inputchange(e,w){
+         console.log(e.target.value)
+         console.log(w)
+     }
+}
 })
 //单元测试
 import modetest from'chai'
