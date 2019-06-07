@@ -54,8 +54,8 @@ describe('Button', () => {
         const Constructor = Vue.extend(Button)
         const vm = new Constructor({
             propsData: {
-                icon: 'settings',
-                iconPosition: 'right'
+                icon: 'you',
+                iconposition: 'right'
             }
         }).$mount(div)
         const icon = vm.$el.querySelector('.icon')

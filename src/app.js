@@ -12,7 +12,8 @@ new Vue({
     data:{
             isload:false,
         isload1:false,
-        isload2:false
+        isload2:false,
+        mess:'haha'
         },
 methods:{
      inputchange(e,w){

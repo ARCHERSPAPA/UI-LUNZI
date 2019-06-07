@@ -6,8 +6,6 @@
            @input="$emit('change',$event,'in')"
            @focus="$emit('change',$event,'fo')">
 
-
-    </input>
     <template>
         <g-icon v-if="erro" :name="iconname"></g-icon>
         <span v-if="erro">你输入的{{VAL}}有误</span>
@@ -24,7 +22,7 @@ Vue.component('g-icon',Icon)
     components:{
     Icon
     },
-        name: "input",
+
         props:{
             disabled:false,
             value:{

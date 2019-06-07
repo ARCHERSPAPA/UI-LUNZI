@@ -1,7 +1,8 @@
 <template>
-    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}" @click="x">
+    <button class="g-button" :class="{[`icon-${iconposition}`]:true}" @click="x">
 
         <div class="content">
+
             <slot></slot>
         </div>
         <g-icon  name="loading" v-if="loading" class="load"> </g-icon>
@@ -30,7 +31,7 @@
             components:{
               'g-icon':Icon
             },
-            iconPosition: {
+            iconposition: {
                 type: String,
                 default: "left",
                 validator(value) {
@@ -42,6 +43,7 @@
         methods:{
             x(){
                 this.$emit('click')
+
             }
         }
 
