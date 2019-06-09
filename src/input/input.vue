@@ -1,10 +1,10 @@
 <template>
 
 <div class="inputS">
-    <input type="text" :value="value" :disabled="disabled" :readonly="readonly"
-           @change="$emit('change',$event,'made')"
-           @input="$emit('change',$event,'in')"
-           @focus="$emit('change',$event,'fo')">
+    <input type="text" :value="value1" :disabled="disabled" :readonly="readonly "
+           @change="$emit('change',$event.target.value)"
+           @input="$emit('change',$event.target.value)"
+           @focus="$emit('change',$event.target.value)">
 
     <template>
         <g-icon v-if="erro" :name="iconname"></g-icon>
@@ -19,13 +19,20 @@ import  Icon from '../icon'
 import Vue from 'vue'
 Vue.component('g-icon',Icon)
     export default {
+        model: {
+            prop: 'value1',
+            event: 'change'
+        },
     components:{
     Icon
     },
 
         props:{
-            disabled:false,
-            value:{
+            disabled:{
+                type: Boolean,
+                default:false
+            },
+            value1:{
                 type:String,
                 default:'gaga'
             },

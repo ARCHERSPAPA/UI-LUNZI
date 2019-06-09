@@ -55,7 +55,10 @@
 
     </div>
     <div class=" list">
-        <g-input @change="inputchange" v-model='mess'></g-input>
+        <g-input  v-model="value1"></g-input>
+        <div>
+            {{value1}}
+        </div>
         <g-input disabled></g-input>
         <g-input readonly></g-input>
         <g-input  iconname="err2" erro >

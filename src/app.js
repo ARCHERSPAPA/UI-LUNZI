@@ -13,12 +13,15 @@ new Vue({
             isload:false,
         isload1:false,
         isload2:false,
-        mess:'haha'
+        value1:'haha'
         },
 methods:{
-     inputchange(e,w){
-         console.log(e.target.value)
-         console.log(w)
+     inputchange(eventValue){
+
+         console.log(`mess is ${this.mess}`)
+
+
+         this.mess=eventValue
      }
 }
 })
