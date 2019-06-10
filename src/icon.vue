@@ -9,9 +9,9 @@ import  './svg'
     export default {
 
         props:{name:{
-            type:String,
-
+            type:[String,Number]
             }
+
         },
 
     }

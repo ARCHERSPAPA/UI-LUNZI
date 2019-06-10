@@ -13,7 +13,7 @@ describe('input', () => {
      const  constructor =Vue.extend(input)
      const vm =new constructor({
          propsData:{
-  value:'2323'
+  value1:'2323'
          }
 
      }).$mount()

@@ -24,6 +24,7 @@
   "dependencies": {
     "button": "^1.1.1",
     "chai": "^4.2.0",
+    "fence": "^0.4.0",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3"
   },

@@ -3,10 +3,14 @@ import  ButtonS from './button'
 import  Icon from './icon'
 import  buttong  from './g-button-g'
 import inputI from './input/input'
+import  row from './fence/row'
+import  col from './fence/col'
 Vue.component('g-button',ButtonS )
 Vue.component('g-icon',Icon)
 Vue.component('buttongroup',buttong)
 Vue.component('g-input',inputI)
+Vue.component('g-row',row)
+Vue.component('g-col',col)
 new Vue({
     el:'#app',
     data:{
