@@ -40,9 +40,25 @@ new Vue({
             this.mess = eventValue
         },
         showtoast(){
-   this.$toast('nihao')
+            this.$toast('nihao',{
+                closeme:{
+                    text:'好的',callback(){
+                        console.log('你好我也好')
+                    }
+                }})
+
         }
+
     },
+    created(){
+        this.$toast('nihao',{
+            closeme:{
+                text:'好的',callback(){
+                    console.log('你好我也好')
+                }
+            }})
+
+            }
 
 })
 //单元测试
