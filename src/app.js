@@ -1,61 +1,56 @@
 import Vue from 'vue'
-import  ButtonS from './button'
-import  Icon from './icon'
-import  buttong  from './g-button-g'
+import ButtonS from './button'
+import Icon from './icon'
+import buttong from './g-button-g'
 import inputI from './input/input'
-import  row from './fence/row'
-import  col from './fence/col'
-import  layout from './layout/layout'
-import  Content from './layout/content'
-import  sider from './layout/sider'
-import  header from './layout/header'
-import  footer from './layout/footer'
-Vue.component('g-button',ButtonS )
-Vue.component('g-icon',Icon)
-Vue.component('buttongroup',buttong)
-Vue.component('g-input',inputI)
-Vue.component('g-row',row)
-Vue.component('g-col',col)
-Vue.component('g-content',Content)
-Vue.component('g-header',header)
-Vue.component('g-footer',footer)
-Vue.component('g-sider',sider)
-Vue.component('g-layout',layout)
+import row from './fence/row'
+import col from './fence/col'
+import layout from './layout/layout'
+import Content from './layout/content'
+import sider from './layout/sider'
+import header from './layout/header'
+import footer from './layout/footer'
+import toast from './toast/toast'
+import plug from './plugin'
+Vue.use(plug)
+
+Vue.component('g-button', ButtonS)
+Vue.component('g-icon', Icon)
+Vue.component('buttongroup', buttong)
+Vue.component('g-input', inputI)
+Vue.component('g-row', row)
+Vue.component('g-col', col)
+Vue.component('g-content', Content)
+Vue.component('g-header', header)
+Vue.component('g-footer', footer)
+Vue.component('g-sider', sider)
+Vue.component('g-layout', layout)
+Vue.component('g-toast', toast)
 new Vue({
-    el:'#app',
-    data:{
-            isload:false,
-        isload1:false,
-        isload2:false,
-        value1:'haha'
+    el: '#app',
+    data: {
+        isload: false,
+        isload1: false,
+        isload2: false,
+        value1: 'haha'
+    },
+    methods: {
+        inputchange(eventValue) {
+            console.log(`mess is ${this.mess}`)
+            this.mess = eventValue
         },
-methods:{
-     inputchange(eventValue){
+        showtoast(){
+   this.$toast('nihao')
+        }
+    },
 
-         console.log(`mess is ${this.mess}`)
-
-
-         this.mess=eventValue
-     }
-}
 })
 //单元测试
-import modetest from'chai'
-import  spy from 'chai-spies'
-modetest.use( spy)
-const  expect = modetest.expect
+import modetest from 'chai'
+import spy from 'chai-spies'
 
-
-
-
-
-
-
-
-
-
-
-
+modetest.use(spy)
+const expect = modetest.expect
 
 
 // {
