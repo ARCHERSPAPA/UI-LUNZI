@@ -14,7 +14,7 @@
         }
 
         :root {
-            --buttonH: 2em;
+            --buttonH: 36px;
             --buttonF: 16PX;
             --buttonbackgroundC: #fff;
             --buttonC: black
@@ -84,7 +84,9 @@
     </g-layout>
 </div>
     <div class="list">
-        <g-button @click="showtoast" ></g-button>
+        <g-button @click="showtoast" >bottom</g-button>
+        <g-button @click="showtoast1" > top</g-button>
+        <g-button @click="showtoast2" >middle</g-button>
     </div>
 </div>
 </body>

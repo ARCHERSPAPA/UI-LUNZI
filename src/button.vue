@@ -73,7 +73,7 @@
 
         .content {
             order: 2;
-            height: 24px;
+
             margin-left:0.5em ;
         }
         .icon {
@@ -83,7 +83,7 @@
 
         &.icon-right {
             .content {
-                height: 24px;
+
                 order: 1;
 
             }
@@ -96,7 +96,8 @@
         }
 
         &:hover {
-            border-color: white;
+opacity: 0.8;
+
         }
 
         &:active {

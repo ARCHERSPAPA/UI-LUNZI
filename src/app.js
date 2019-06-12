@@ -12,6 +12,7 @@ import header from './layout/header'
 import footer from './layout/footer'
 import toast from './toast/toast'
 import plug from './plugin'
+
 Vue.use(plug)
 
 Vue.component('g-button', ButtonS)
@@ -39,26 +40,54 @@ new Vue({
             console.log(`mess is ${this.mess}`)
             this.mess = eventValue
         },
-        showtoast(){
-            this.$toast('nihao',{
-                closeme:{
-                    text:'好的',callback(){
+        showtoast() {
+            this.$toast('niansdsadsadmds  dasndkjasdaslkm dasndkjasdaslkm', {
+                closeme: {
+                    text: '好的', callback() {
                         console.log('你好我也好')
-                    }
-                }})
+                    },
+
+                },
+                toastpostion: 'bottom'
+            })
+
+        },
+        showtoast1() {
+            this.$toast('niansdsadsadmds  dasndkjasdaslkm dasndkjasdaslkm', {
+                closeme: {
+                    text: '好的', callback() {
+                        console.log('你好我也好')
+                    },                },
+                toastpostion: 'top'
+            })
+
+        },
+        showtoast2() {
+            this.$toast(`我操你吗的${parseInt(Math.floor(Math.random() * 100))}`, {
+                closeme: {
+                    text: '好的', callback() {
+                        console.log('你好我也好')
+                    },
+
+                },
+                toastpostion: 'middle'
+            })
 
         }
 
     },
-    created(){
-        this.$toast('nihao',{
-            closeme:{
-                text:'好的',callback(){
+    created() {
+        this.$toast('<i>xixi</i>', {
+            closeme: {
+                text: '好的', callback() {
                     console.log('你好我也好')
                 }
-            }})
+            },
+            enablehtml: true,
 
-            }
+        })
+
+    }
 
 })
 //单元测试
