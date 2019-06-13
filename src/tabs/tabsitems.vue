@@ -1,5 +1,5 @@
 <template>
-    <div class="items" @click="act">
+    <div class="items" @click="act" :class="classes">
         <slot></slot>
     </div>
 </template>
@@ -16,10 +16,22 @@
                 type: [String, Number],
                            }
         },
-        created() {
+        data(){
+          return{
+              active:false
+          }
+        },
+        computed:{
+            classes(){
+                return {
+                    active:this.active
+                }
+            }
+        },
+        mounted: function () {
             console.log(this.eventBus);
-            this.eventBus.$on('update:selected',name=>{
-                console.log(name);
+            this.eventBus.$on('update:selected', name => {
+                this.active = name === this.name;
             })
         },
         methods:{
@@ -31,6 +43,13 @@
     }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.items{
+    padding:1em 2em;
+    border: 1px solid black;
+    cursor: pointer;
+   &.active{
+        color: red;
+    }
+}
 </style>

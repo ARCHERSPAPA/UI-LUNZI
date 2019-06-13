@@ -1,5 +1,5 @@
 <template>
-    <div class="panel">
+    <div class="panel" :class="classes">
 <slot></slot>
     </div>
 </template>
@@ -8,25 +8,47 @@
     export default {
         name: 'panel',
               inject:['eventBus'],
-      created() {
+     mounted() {
           this.eventBus.$on('update:selected',name=>{
-              console.log('这里是panle'+name);
+              if(name === this.name){
+                  this.active=true
+              }else {
+                  this.active=false
+              }
           })
       },
+        computed:{
+          classes(){
+              return {
+                  active:this.active
+              }
+          }
+        },
+        data(){
+           return{
+               active:false
+           }
+        },
         props:{
           name:{
               type:String
           }
+
         },
 
-        methods:{
 
-        }
     }
 
 
 </script>
 
 <style scoped lang="scss">
+.panel{
+    display: none;
+    &.active{
+        background: red;
+        display: block;
+    }
 
+}
 </style>

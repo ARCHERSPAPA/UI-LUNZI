@@ -8,6 +8,7 @@
     import  Vue from 'vue'
     export default {
 props:{
+
     selected:{
         type:String,
         required:true
@@ -18,14 +19,16 @@ props:{
         validator(key){
              return ['henzhede','vertical'].indexOf(key)>=0
         }
-    }
+    },
+
 },
         methods:{
 
         },
         data(){
     return{
-        eventBus:new Vue()
+        eventBus:new Vue(),
+
     }
 
         },
