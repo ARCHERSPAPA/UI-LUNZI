@@ -88,9 +88,28 @@
         <g-button @click="showtoast1" > top</g-button>
         <g-button @click="showtoast2" >middle</g-button>
     </div>
+    <div class="list">
+<g-tabs  :selected.sync="selectedTab" @nimasile:cao="ni">
+    <g-tabshead>
+        <g-tabsitems name="nearby1">2019</g-tabsitems>
+        <g-tabsitems name="fantasitic">周润发</g-tabsitems>
+        <g-tabsitems name="wordcup">2019</g-tabsitems>
+
+
+    </g-tabshead>
+    <g-tabsbody>
+<g-tabspanel name="fantasitic">1</g-tabspanel>
+<g-tabspanel name="wordcup">2</g-tabspanel>
+<g-tabspanel name="nearby">3</g-tabspanel>
+    </g-tabsbody>
+</g-tabs>
+
+
+    </div>
 </div>
 </body>
 <!--<script src="//at.alicdn.com/t/font_1226935_lc4era9n7y.js"></script>-->
 <script src='./src/app.js'></script>
 
 </html>
+<script>

@@ -12,6 +12,11 @@ import header from './layout/header'
 import footer from './layout/footer'
 import toast from './toast/toast'
 import plug from './plugin'
+import tabs from './tabs/tabs'
+import tabsBody from './tabs/tabsbody'
+import tabsHead from './tabs/tabshead'
+import tabsItems from './tabs/tabsitems'
+import tabsPanel from './tabs/tabspanel'
 
 Vue.use(plug)
 
@@ -27,13 +32,22 @@ Vue.component('g-footer', footer)
 Vue.component('g-sider', sider)
 Vue.component('g-layout', layout)
 Vue.component('g-toast', toast)
+Vue.component('g-tabs', tabs)
+Vue.component('g-tabsbody',tabsBody)
+Vue.component('g-tabshead',tabsHead)
+Vue.component('g-tabspanel',tabsPanel)
+Vue.component('g-tabsitems',tabsItems)
+
+
+
 new Vue({
     el: '#app',
     data: {
         isload: false,
         isload1: false,
         isload2: false,
-        value1: 'haha'
+        value1: 'haha',
+        selectedTab:'meinv'
     },
     methods: {
         inputchange(eventValue) {
@@ -73,7 +87,9 @@ new Vue({
                 toastpostion: 'middle'
             })
 
-        }
+        },
+        ni(){
+            console.log('wohaikeyi')    }
 
     },
     created() {
