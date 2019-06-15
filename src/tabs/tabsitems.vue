@@ -1,6 +1,7 @@
 <template>
-    <div class="items" @click="act" :class="classes">
+    <div class="items" @click="act" :class="classes" >
         <slot></slot>
+
     </div>
 </template>
 
@@ -10,7 +11,8 @@
         inject: ['eventBus'],
         props: {
             disabled: {
-                type: Boolean
+                type: Boolean,
+                default:false
             },
             name: {
                 type: [String, Number],
@@ -24,7 +26,8 @@
         computed:{
             classes(){
                 return {
-                    active:this.active
+                    active:this.active,
+                    disabled: this.disabled
                 }
             }
         },
@@ -35,9 +38,13 @@
             })
         },
         methods:{
+
             act(){
-                console.log('点了'+this.name)
-                this.eventBus.$emit('update:selected',this.name)
+                // console.log('点了'+this.name)
+if(!this.disabled){
+    this.eventBus.$emit('update:selected',this.name,this)
+}else return
+
             }
         }
     }
@@ -46,10 +53,16 @@
 <style scoped lang="scss">
 .items{
     padding:1em 2em;
-    border: 1px solid black;
+display: flex;
+    align-items: center;
     cursor: pointer;
-   &.active{
-        color: red;
-    }
+    position: relative;
+
+&.active{
+    color: skyblue;
+}
+ &.disabled{
+      cursor: not-allowed;
+  }
 }
 </style>

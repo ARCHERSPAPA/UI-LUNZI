@@ -74,7 +74,7 @@
         .content {
             order: 2;
 
-            margin-left:0.5em ;
+
         }
         .icon {
             order: 1;
@@ -90,8 +90,7 @@
 
             .icon {
                 order: 2;
-                margin-left: 0;
-                margin-left:0.5em ;
+
             }
         }
 

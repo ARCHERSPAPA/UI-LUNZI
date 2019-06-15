@@ -91,18 +91,18 @@
     <div class="list">
 <g-tabs  :selected.sync="selectedTab" @nimasile:cao="ni">
     <g-tabshead>
-        <g-tabsitems name="nearby1">2019</g-tabsitems>
-        <g-tabsitems name="fantasitic">周润发</g-tabsitems>
+        <g-tabsitems name="nearby1" disabled>周润发</g-tabsitems>
+        <g-tabsitems name="fantasitic">时尚模特</g-tabsitems>
         <g-tabsitems name="wordcup">2019</g-tabsitems>
 <template>
-   <button>nihao</button>
+    <g-button>更多</g-button>
 </template>
 
     </g-tabshead>
     <g-tabsbody>
-<g-tabspanel name="fantasitic">1</g-tabspanel>
-<g-tabspanel name="wordcup">2</g-tabspanel>
-<g-tabspanel name="nearby1">3</g-tabspanel>
+<g-tabspanel name="fantasitic">美女的图片</g-tabspanel>
+<g-tabspanel name="wordcup">基本上不看</g-tabspanel>
+<g-tabspanel name="nearby1">我周润发头发怎么样</g-tabspanel>
     </g-tabsbody>
 </g-tabs>
 

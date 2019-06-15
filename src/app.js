@@ -72,7 +72,8 @@ new Vue({
                     text: '好的', callback() {
                         console.log('你好我也好')
                     },                },
-                toastpostion: 'top'
+                toastpostion: 'top',
+                times:10
             })
 
         },

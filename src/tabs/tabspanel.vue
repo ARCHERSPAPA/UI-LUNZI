@@ -45,8 +45,10 @@
 <style scoped lang="scss">
 .panel{
     display: none;
+    color: white;
+    padding: 30px;
     &.active{
-        background: red;
+       background: rgba(33,33,33,0.3);
         display: block;
     }
 
