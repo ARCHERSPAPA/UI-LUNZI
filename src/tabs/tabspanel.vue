@@ -48,8 +48,10 @@
     color: white;
     padding: 30px;
     &.active{
-       background: rgba(33,33,33,0.3);
+       background: rgba(33,33,33,0.9);
         display: block;
+        filter: blur();
+        box-shadow: 1px 1px 10px 1px white;
     }
 
 }

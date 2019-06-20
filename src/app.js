@@ -17,6 +17,7 @@ import tabsBody from './tabs/tabsbody'
 import tabsHead from './tabs/tabshead'
 import tabsItems from './tabs/tabsitems'
 import tabsPanel from './tabs/tabspanel'
+import popover from './popover/popover'
 
 Vue.use(plug)
 
@@ -37,6 +38,7 @@ Vue.component('g-tabsbody',tabsBody)
 Vue.component('g-tabshead',tabsHead)
 Vue.component('g-tabspanel',tabsPanel)
 Vue.component('g-tabsitems',tabsItems)
+Vue.component('g-popover',popover)
 
 
 
@@ -89,7 +91,7 @@ new Vue({
             })
 
         },
-        ni(){
+        mabi(){
             console.log('wohaikeyi')    }
 
     },

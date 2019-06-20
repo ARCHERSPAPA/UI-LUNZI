@@ -26,9 +26,7 @@ Vue.component('g-icon',Icon)
     components:{
     Icon
     },
-beforeCreate(){
-  console.log(this)
-},
+
         props:{
             disabled:{
                 type: Boolean,

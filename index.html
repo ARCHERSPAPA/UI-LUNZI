@@ -88,13 +88,13 @@
         <g-button @click="showtoast1" > top</g-button>
         <g-button @click="showtoast2" >middle</g-button>
     </div>
-    <div class="list">
-<g-tabs  :selected.sync="selectedTab" @nimasile:cao="ni">
+    <div class="list" >
+<g-tabs  :selected.sync="selectedTab" >
     <g-tabshead>
         <g-tabsitems name="nearby1" disabled>周润发</g-tabsitems>
         <g-tabsitems name="fantasitic">时尚模特</g-tabsitems>
         <g-tabsitems name="wordcup">2019</g-tabsitems>
-<template>
+<template slot="actions">
     <g-button>更多</g-button>
 </template>
 
@@ -105,13 +105,58 @@
 <g-tabspanel name="nearby1">我周润发头发怎么样</g-tabspanel>
     </g-tabsbody>
 </g-tabs>
+    </div>
+    <div class="list"  style="text-align: center">
 
+        <g-popover  style="overflow: hidden" positions="top" >
+            <template slot="content">
+  <p>SDASIDASD DS AD SAD A</p>
+                <p>SDASIDASD22  ds ads ad sadsa daddddddddddddddddddddddddddddddddds DS AD SAD A</p>
+                <p>SDASIDASD DS AD SAD A</p>
+                <p>SDASIDASD DS AD SAD A</p>
+            </template>
+            <g-button @click="mabi">点呗</g-button>
+
+        </g-popover>
+        <g-popover  style="overflow: hidden" positions="bottom">
+            <template slot="content" >
+                <p>SDASIDASD DS AD SAD A</p>
+                <p>SDASIDASD DS AD SAD A</p>
+                <p>SDASIDASD DS AD SAD A</p>
+                <p>SDASIDASD DS AD SAD A</p>
+            </template>
+            <g-button @click="mabi">点呗</g-button>
+        </g-popover>
+        <g-popover  style="overflow: hidden" positions="left">
+            <template slot="content" >
+                <p>SDASIDASD DS AD SAD A</p>
+                <p>SDASIDASD DS AD SAD A</p>
+                <p>SDASIDASD DS AD SAD A</p>
+                <p>SDASIDASD DS AD SAD A</p>
+            </template>
+            <g-button @click="mabi">点呗</g-button>
+
+        </g-popover>
+        <g-popover  style="overflow: hidden" positions="right">
+            <template slot="content" >
+                <p>SDASIDASD DS AD SAD A</p>
+                <p>SDASIDASD DS AD SAD A</p>
+                <p>SDASIDASD DS AD SAD A</p>
+                <p>SDASIDASD DS AD SAD A</p>
+            </template>
+            <g-button @click="mabi">点呗</g-button>
+        </g-popover>
 
     </div>
 </div>
+
 </body>
 <!--<script src="//at.alicdn.com/t/font_1226935_lc4era9n7y.js"></script>-->
 <script src='./src/app.js'></script>
 
 </html>
 <script>
+
+</script>
+
+

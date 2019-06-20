@@ -4,9 +4,10 @@
         <div class="head">
             <slot></slot>
             <div class="line" ref="line"></div>
-        </div>
-        <div class="warp">
-            <slot name="actions"></slot>
+            <div class="actions-wrapper ">
+                <slot name="actions"></slot>
+            </div>
+
         </div>
 
     </div>
@@ -32,17 +33,14 @@
 
 <style scoped lang="scss">
     .head {
-        display: flex;
+        display: inline-flex;
         justify-content: flex-start;
         border-bottom: 1px solid rgba(33,33,33,0.5);
         border-top: 1px solid rgba(33,33,33,0.5);
         margin-bottom: 20px;
      font-weight: bold;
-        button{
-            position: absolute;
-            right: 0;
-            top:10px
-        }
+        width: 100%;
+
         position: relative;
        & .line{
             border-bottom:3px solid black;
@@ -54,6 +52,15 @@
            transition: .5s;
 
         }
+        .actions-wrapper {
+            margin-left: auto;
+            display: inline-flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 1em;
+
+        }
     }
+
 
 </style>
