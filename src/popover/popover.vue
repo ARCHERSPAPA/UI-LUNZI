@@ -1,8 +1,8 @@
 <template>
-    <div class="popover" @click="onclick" ref="popover">
+    <div class="popover" ref="popover">
         <div class="warp" v-if="show" ref="contentW" :class=" positions">
             <div class="warps">
-                <slot name="content"></slot>
+                <slot name="content" :close="close"></slot>
             </div>
 
         </div>
@@ -22,15 +22,54 @@
             }
         },
         mounted() {
+            if(this.trigger==='click'){
+                this.$refs.popover.addEventListener('click',this.onclick)
+            }else {
+                this.$refs.popover.addEventListener('mouseenter',this.open)
+
+                    this.$refs.popover.addEventListener('mouseleave',this.close())
+
+
+            }
+
+        },
+        destroyed(){
+            if(this.trigger==='click'){
+                this.$refs.popover.removeEventListener('click',this.onclick)
+            }else {
+                this.$refs.popover.removeEventListener('mouseenter',this.open)
+                this.$refs.popover.removeEventListener('mouseleave',this.close)
+            }
+        },
+        // computed:{
+        //     openE(){
+        //         if(this.trigger==='click'){
+        //             return 'click'
+        //         }else {
+        //             return 'mouseenter'
+        //         }
+        //     },
+        //     closeE(){
+        //         if(this.trigger==='click'){
+        //             return 'click'
+        //         }else{
+        //             return 'mouseleave'
+        //         }
+        //     }
+        // },
+        created() {
             console.log(this.$refs);
 
             console.log(this.positions)
         },
-        created() {
-
-        },
         props: {
-
+            trigger:{
+               type:String,
+               default:'click',
+               validate(v){
+                   return ['click','mouseenter'].indexOf(v)
+               }
+           },
             positions: [String]
         },
         methods: {
@@ -44,11 +83,16 @@
                 }
             },
             open() {
-                this.show = !this.show
-                this.$nextTick(() => {
-                    this.position()
-                    document.addEventListener('click', this.eventHander)
-                })
+
+
+                    this.show = !this.show
+                    this.$nextTick(() => {
+                        this.position()
+                        document.addEventListener('click', this.eventHander)
+
+                    })
+
+
             },
             eventHander(e) {
                 console.log(this.$refs.contentW)
@@ -58,11 +102,16 @@
                     return
                 }
                 console.log('外部');
-                this.close()
+
+                    this.close()
+
+
             },
             close() {
-                this.show = false
-                document.removeEventListener('click', this.eventHander)
+                    this.show = false
+                    document.removeEventListener('click', this.eventHander)
+
+
             },
             position() {
                 if (this.show === true) {
@@ -122,8 +171,32 @@
     .popover {
         display: inline-block;
         position: relative;
-    }
 
+    }
+@keyframes bottom{
+    0%{transform: translateY(-25%);
+         opacity: 0}
+    100%{transform: translateY(0%);
+    opacity: 1}
+}
+    @keyframes top{
+        0%{transform: translateY(-25%);
+            opacity: 0}
+        100%{transform: translateY(-100%);
+            opacity: 1}
+    }
+    @keyframes left{
+        0%{transform:translateX(-75%);
+            opacity: 0}
+        100%{transform: translateX(-100%);
+            opacity: 1}
+    }
+    @keyframes right{
+        0%{transform: translateX(-25%);
+            opacity: 0}
+        100%{transform: translateX(0%);
+            opacity: 1}
+    }
     .warp {
         position: absolute;
 
@@ -149,7 +222,7 @@
     .warp.top {
         margin-top: -10px;
         transform: translateY(-100%);
-
+        animation: top .5s;
         &::before, &::after {
             content: '';
             display: inline-block;
@@ -174,7 +247,7 @@
 
     .warp.bottom {
         margin-top: 10px;
-
+        animation: bottom  .5s;
         &::before, &::after {
             content: '';
             display: inline-block;
@@ -201,16 +274,18 @@
 
         transform: translateX(-100%);
 margin-left: -10px;
+        animation: left .5s;
         &::before, &::after {
             content: '';
             display: inline-block;
             width: 0px;
             height: 0px;
           border: 10px solid transparent;
-            border-left-color: black;
+          border-right: none;
             transform: rotateX(180deg);
             position: absolute;
             left: 13px;
+
         }
 
         &::before {
@@ -227,14 +302,17 @@ margin-left: -10px;
     }
 
     .warp.right {
+        animation: right .5s;
         margin-top: 10px;
-margin-left: 10px;
+        margin-left:20px;
         &::before, &::after {
+
             content: '';
             display: inline-block;
             width: 0px;
             height: 0px;
       border: 10px solid transparent;
+        border-left: none;
             position: absolute;
             left: 13px;
         }
@@ -242,13 +320,13 @@ margin-left: 10px;
         &::before {
             border-right-color: black;
             top:25%;
-            left: -20px;
+            left:-10px;
         }
 
         &::after {
             border-right-color: white;
             top:25%;
-            left: -18px;
+            left: -8px;
         }
     }
 
